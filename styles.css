@@ -18,7 +18,7 @@
 
 body {
     display: grid;
-    grid-template: 1fr 4fr / 16rem 4fr;
+    grid-template: 11rem 4fr / 16rem 4fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -137,7 +137,7 @@ svg {
     font-size: 1.25rem;
 }
 
-a {
+.sidebar a {
     display: flex;
     gap: 21px;
     margin-left: 12px;
@@ -170,6 +170,9 @@ a {
 }
 
 .projects article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 30px 20px 20px 30px;
     border-left: 0.5rem solid var(--accent);
 }
@@ -185,6 +188,12 @@ article h4 {
 
 article p {
     color: var(--text-color);
+}
+
+.interact {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
 }
 
 .side-feed {
@@ -203,4 +212,3 @@ article p {
     padding: 1.3rem 0;
     border-bottom: 1px solid #d6d3d1;
 }
-
