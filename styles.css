@@ -5,6 +5,7 @@
     --accent: #eab308;
     --text-color: #737373;
     --shadowing: 0 2px 3px rgb(175, 175, 175);
+    --profile-pic: center top / cover no-repeat;
 }
 
 * {
@@ -23,6 +24,14 @@ body {
         "sidebar header"
         "sidebar main";
     min-height: 100vh;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* start of header style */
@@ -65,13 +74,13 @@ body {
 }
 
 .profile-pic {
-    background: url(images/batman-profile.jpg) center center / cover no-repeat;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
-.profile-bar .profile-pic {
-    width: 50px;
-    height: 50px;
+.user {
+    background: url(images/batman-profile.jpeg) var(--profile-pic);
 }
 
 .profile-display {
@@ -103,13 +112,19 @@ button {
 
 /* start of sidebar style */
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18rem;
+    background-color: var(--main-color);
+    color: white;
     grid-area: sidebar;
+}
+
+.sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding: 16px 0px 0px 8px;
-    background-color: var(--main-color);
-    color: white;
 }
 
 .sidebar-header {
@@ -137,12 +152,15 @@ svg {
     font-size: 1.25rem;
 }
 
-.sidebar a {
+.sidebar-content a {
     display: flex;
     gap: 21px;
     margin-left: 12px;
-    color: inherit;
     font-weight: bold;
+}
+
+.image-credit {
+    align-self: center;
 }
 /* end of sidebar style */
 
@@ -211,4 +229,30 @@ article p {
 .account {
     padding: 1.3rem 0;
     border-bottom: 1px solid #d6d3d1;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.joker .profile-pic {
+    background: url(images/joker-profile.jpg) var(--profile-pic);
+}
+
+.cat .profile-pic {
+    background: url(images/catwoman-profile.jpeg) var(--profile-pic);
+}
+
+.harley .profile-pic {
+    background: url(images/harley-quinn-profile.jpg) var(--profile-pic);
+}
+
+.dent .profile-pic {
+    background: url(images/two-face-profile.jpg) var(--profile-pic);
+}
+
+.riddle .profile-pic {
+    background: url(images/riddler-profile.jpeg) var(--profile-pic);
 }
