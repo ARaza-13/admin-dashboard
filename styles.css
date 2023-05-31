@@ -17,6 +17,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+img {
+    filter: brightness(0%);
+    width: 1.5rem;
+}
+
 body {
     display: grid;
     grid-template: 11rem 4fr / 16rem 4fr;
@@ -30,7 +35,35 @@ a {
     color: white;
 }
 
-a:hover {
+.profile-pic:hover,
+button:hover,
+.sidebar-header:hover,
+.sidebar-content a:hover {
+    transform: scale(1.07);
+    cursor: pointer;
+}
+
+.sidebar-content a:hover,
+.promotion a:hover {
+    text-decoration: underline;
+}
+
+img:hover {
+    transform: scale(1.07);
+    cursor: pointer;
+}
+
+.account:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+h4:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.project h4:hover {
     text-decoration: underline;
 }
 
@@ -112,19 +145,22 @@ button {
 
 /* start of sidebar style */
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 18rem;
     background-color: var(--main-color);
     color: white;
+    padding: 16px 0px 0px 8px;
     grid-area: sidebar;
 }
 
 .sidebar-content {
     display: flex;
     flex-direction: column;
-    gap: 64px;
-    padding: 16px 0px 0px 8px;
+    gap: 4rem;
+    position: sticky;
+    top: 1rem;
+}
+
+.sidebar-content img {
+    filter: brightness(0) invert(1);
 }
 
 .sidebar-header {
@@ -133,16 +169,8 @@ button {
     gap: 8px;
 }
 
-.sidebar-header svg {
+.sidebar-header img {
     width: 3rem;
-}
-
-svg {
-    width: 1.5rem;
-}
-
-.sidebar svg path {
-    fill: white;
 }
 
 .nav ul {
@@ -157,10 +185,6 @@ svg {
     gap: 21px;
     margin-left: 12px;
     font-weight: bold;
-}
-
-.image-credit {
-    align-self: center;
 }
 /* end of sidebar style */
 
@@ -177,6 +201,7 @@ svg {
 }
 
 .main-feed {
+    position: relative;
     flex: 3;
 }
 
@@ -226,9 +251,20 @@ article p {
 }
 
 .announcement,
-.account {
+.account, 
+.promotion li {
     padding: 1.3rem 0;
     border-bottom: 1px solid #d6d3d1;
+}
+
+.announcement:last-child,
+.account:last-child,
+.promotion li:last-of-type {
+    border: none;
+}
+
+.promotion a {
+    color: var(--main-color);
 }
 
 .account {
@@ -256,3 +292,4 @@ article p {
 .riddle .profile-pic {
     background: url(images/riddler-profile.jpeg) var(--profile-pic);
 }
+/* end of main /*
